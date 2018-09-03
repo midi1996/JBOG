@@ -16,8 +16,8 @@ Neither I nor the people here helping or attempting to help take any responsibli
 
 0) know your hardware to the core. (saying that you have Intel HD Graphics is not an answer, saying that you have a Core i5 is not an answer, you need to know your specific hardware, from the external case [if applicable], down to every component of the computer, namely: CPU - GPU(s) - RAM - Disks - Motherboard - ...)
 1) have a 4GB minimum USB drive 
-	Note: if you have a rooted android phone, look for DriveDroid, and make sure you have a shared internal storage (no separate /data partition) usually all phones made after 2012 should be like that, so if yours is fairly new it will handle it just fine.
-	Note2: use a USB2.0 drive, HDDs may not be a good choice, also if you dont have any USB2.0, plug the USB in a USB2.0 port if available, or use a USB extension cord that doesnt support USB3.0, this way the USB3.0 drive will run in USB2.0 mode.
+	* Note: if you have a rooted android phone, look for DriveDroid, and make sure you have a shared internal storage (no separate /data partition) usually all phones made after 2012 should be like that, so if yours is fairly new it will handle it just fine.
+	* Note2: use a USB2.0 drive, HDDs may not be a good choice, also if you dont have any USB2.0, plug the USB in a USB2.0 port if available, or use a USB extension cord that doesnt support USB3.0, this way the USB3.0 drive will run in USB2.0 mode.
 2) a LAN connection (no wifi, no wifi dongles, Ethernet USB adapter *may* work depending on macOS support) and you must know your LAN card's model [CRUTIAL]
 3) a fast internet connection (20Mbps downlink may take about an hour for the install procedure, the faster the better).
 4) a Windows environment (can be VM, installed on a real machine, or even WinPE): Windows 7 SP1 or later.
@@ -56,9 +56,9 @@ Depending on your hardware, you will need to make some modification or choices f
 1) Open [CCC](http://cloudclovereditor.altervista.org) : Cloud Clover Configurator: an open-source web-based clover configurator, and better than the app in some ways.
 2) Create a new config
 3) Under ACPI:
-	- if you have a 3rd Gen intel Core: select Generate Plugin Type under SSDT
-	- if you have a 2nd Gen intel Core: select Generate P-States and C-States
-	- Select FixRTC FixTMR FixIPIC under DSDT > Fixes
+	- if you have a 3rd Gen intel Core or newer: select Generate Plugin Type under SSDT
+	- if you have a 2nd Gen intel Core or older: select Generate P-States and C-States
+	- Select `FixRTC` `FixTMR` `FixIPIC` under `DSDT` > `Fixes`
 	- [For people with iGPU] Select the Blue Globe under Patches and choose GFX0 to IGPU
 4) Under Boot:
 	- Boot Arguments (the big zone): `-v debug=0x100 nv_disable=1 kext-dev-mode=1 dart=0` (these are generic boot args for: Verbose `-v debug=0x100` - Disabling Nvidia drivers from loading `nv_disable=1` - unsigned kexts allowin for 10.10.x `kext-dev-mode-1` - disable VT-d on macOS `dart=0`)
@@ -111,10 +111,10 @@ Depending on your hardware, you will need to make some modification or choices f
 add
 
 ```xml
-		<key>AutoMerge</key>
-		<true/>
-		<key>FixHeaders</key>
-		<true/>
+	<key>AutoMerge</key>
+	<true/>
+	<key>FixHeaders</key>
+	<true/>
 ```
 19) Save
 20) Copy the resulting plist file and paste it in CLOVER (partition)> EFI > CLOVER and replace the one already there.
@@ -134,7 +134,7 @@ add
 		- WhateverGreen
 		- USBInjectAll
 		- AppleALC
-		- [optiona, for PS2 devices] VoodooPS2 (2018, doesn anyone still uses PS2 on their desktops, pff)
+		- [optional, for PS2 devices] VoodooPS2 (2018, doesn anyone still uses PS2 on their desktops, pff)
 		- For your LAN card:
 			- AppleIntele1000 for some old cards
 			- IntelMausiEthernet for most Intel NICs
@@ -144,7 +144,7 @@ add
 			- RealtekRTL8111 for Gigabit Realtek Cards
 			Note: if you're not sure, get all of them, but it may create issues later on.
 4) Extracte every zip
-Note: a kexts is a macOS driver, and it's in a form of a `a_folder_name.kext`, on windows it will show as a folder, on macOS it will show as a file.
+	* Note: a kexts is a macOS driver, and it's in a form of a `a_folder_name.kext`, on windows it will show as a folder, on macOS it will show as a file.
 5) now copy FakeSMC.kext - Lilu.kext - WhateverGreen.kext - USBInjectAll.kext - AppleALC.kext - [your_ethernet_driver].kext and put it in CLOVER > EFI > CLOVER > kexts > Other. [skip the sensor kexts, they may cause kernel panics, aka KP]
 6) now you're mostly done with Clover and macOS installer preparation.
 
@@ -185,6 +185,6 @@ To start the installation:
 
 After that, it will reboot for the second stage of the install, boot clover, it should now autoselect Boot `Install macOS from <your hdd name>`, if not, then select it on your own and boot it up, let it finish.
 
-Boom now you have macOS installed. Go to the bottom part of the Vanilla guide to get more information and fixes and extra elements for your config.
+Boom now you have macOS installed. Go to the bottom part of the reddit Vanilla guide [here](https://old.reddit.com/r/hackintosh/comments/68p1e2/ramblings_of_a_hackintosher_a_sorta_brief_vanilla/) to get more information and fixes and extra elements for your config.
 
 This guide will still be updated for additional hacks and information.
