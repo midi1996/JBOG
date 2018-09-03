@@ -86,7 +86,7 @@ Depending on your hardware, you will need to make some modification or choices f
 	- Kabylake - *iMac18,2/18,3*
 	- Skylake - *iMac17,1*
 	- Broadwell - *iMac16,1* (rarely used, if ever)
-	- Haswell Refresh (Devil's Canyon) - *iMac15,1*
+	- Haswell Refresh (Devil\'s Canyon) - *iMac15,1*
 	- Haswell With NVIDIA GPU - *iMac14,2*
 	- Haswell With iGPU - *iMac14,1*
 	- Ivy Bridge - *iMac13,2*
@@ -102,11 +102,20 @@ Depending on your hardware, you will need to make some modification or choices f
 15) name: `config` (no extension)
 16) Download
 17) Open the plist with a text editor like: Notepad++, Geany, Sublime Text. DO NOT USE WINDOWS NOTEPAD (until release 1809 anyways).
-18) Under ```<key>DSDT</key>
-      <dict>```add ```<key>AutoMerge</key>
+18) Under
+```xml
+	<key>DSDT</key>
+	<dict>
+```
+
+add
+
+```xml
+		<key>AutoMerge</key>
 		<true/>
 		<key>FixHeaders</key>
-		<true/>```
+		<true/>
+```
 19) Save
 20) Copy the resulting plist file and paste it in CLOVER (partition)> EFI > CLOVER and replace the one already there.
 
