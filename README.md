@@ -26,7 +26,7 @@ Physical crap:
 * a non-victim computer (to get stuff done when debugging/making things work) [OPTIONAL]
 * and reading skilz, without this, just stop and go install winders.
 
-# So I can make fulfill one of the requirements, wat do?
+# So I can fulfill one of the requirements, wat do?
 
 If you could at least have a decent amount of IQ, then I'm happy to tell you that you can follow through (hopefully) as this hackintosh thingy is as stupid as installing linux on an old computer with obscure hardware.
 
