@@ -45,7 +45,7 @@ That's the whole point of this repo, the first guide here is just help you to ma
 
 Remember, if you use any \*beast products, distros (Niresh, iATKOS, HackintoshZone), just go commit not living. You will not be helped or supported by the people here, so just dont try. But if you want our support, you can just scrap that crap from your hardware and start over from here or any approved:tm: vanilla guide.
 
-You'll find here a file named muh_vanilla.md to start making your installer USB, and Multiboot.md is a cute addition for (*obviously*) multiboot purposes (read that first before the installer guide).
+You'll find here a file named [muh_vanilla.md](muh_vanilla.md) to start making your installer USB, and Multiboot.md is a cute addition for (*obviously*) multiboot purposes (read that first before the installer guide).
 
 ### Good hacky hack hack.
 
