@@ -4,7 +4,9 @@ This is a sort-of-guide, that will show you how to make a macOS installer on Win
 
 ### LAPTOP USERS, ATTENTION!
 
-This guide mainly (and mostly only) **FOR DESKTOP USERS**. Laptop users get to [this guide from rehabman](https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/).
+This guide mainly (mostly) **FOR DESKTOP USERS**. Laptop users get to [this guide from rehabman](https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/).
+
+***OR*** continue reading this guide lol.
 
 ***
 ### Disclamer:
@@ -19,6 +21,7 @@ Neither I nor the people here helping or attempting to help take any responsibli
 	* Note: if you have a rooted android phone, look for DriveDroid, and make sure you have a shared internal storage (no separate /data partition) usually all phones made after 2012 should be like that, so if yours is fairly new it will handle it just fine.
 	* Note2: use a USB2.0 drive, HDDs may not be a good choice, also if you dont have any USB2.0, plug the USB in a USB2.0 port if available, or use a USB extension cord that doesnt support USB3.0, this way the USB3.0 drive will run in USB2.0 mode.
 2) a LAN connection (no wifi, no wifi dongles, Ethernet USB adapter *may* work depending on macOS support) and you must know your LAN card's model [CRUTIAL]
+	- For lappies: you must either have a physical lan port, or a compatible macOS ethernet dongle/adapter, or in case your have a compatible wifi card, it's also good but not recommended (unless it's the only way to go)
 3) a fast internet connection (20Mbps downlink may take about an hour for the install procedure, the faster the better).
 4) a Windows environment (can be VM, installed on a real machine, or even WinPE): Windows 7 SP1 or later.
 5) some googling skills, which a lot of you lack.
@@ -50,8 +53,15 @@ Depending on your hardware, you will need to make some modification or choices f
 16) choose 4.hfs from the list (it should be inside the extracted BDU folder)
 17) wait
 
+# Clover Configuration File:
 
 **Now your USB has clover and a macOS recovery. For the second part we will create a config.plist, fix driver64UEFI for clover and add kexts.**
+
+### For lappies:
+
+Got to [Rehabman config.plist repository](https://github.com/RehabMan/OS-X-Clover-Laptop-Config) and get a fitting config from the list to your hardware configuration.
+
+### For deskies:
 
 1) Open [CCC](http://cloudclovereditor.altervista.org) : Cloud Clover Configurator: an open-source web-based clover configurator, and better than the app in some ways.
 2) Create a new config
@@ -117,6 +127,9 @@ add
 	<true/>
 ```
 19) Save
+
+### For both
+
 20) Copy the resulting plist file and paste it in CLOVER (partition)> EFI > CLOVER and replace the one already there.
 
 ### Fixing your clover install now:
@@ -142,7 +155,17 @@ add
 			- BCM5722D for Broadcom BCM5722 NetXtreme and NetLink family
 			- RealtekRTL8100 for 10/100 Realtek Cards
 			- RealtekRTL8111 for Gigabit Realtek Cards
-			Note: if you're not sure, get all of them, but it may create issues later on.
+				- Note: if you're not sure, get all of them, but it may create issues later on.
+		- *[Exceptionally]* For your compatible Wifi Card:
+			- for Broadcom based chips (DW1550-DW1560-DW1830...): AirPortBcmFixUp
+			- for Atheros based chips (AR5B95/195/97/197, based on AR9280/AR9285 SoC): 
+				- go to https://github.com/RehabMan/HP-ProBook-4x30s-DSDT-Patch/archive/master.zip
+				- extract the zip
+				- explore to `kexts`
+				- get `ProbookAtheros.kext`
+			- for QComAtheros: NOPE - Change it
+			- for Intel: NOPE - Change it
+			- for Atheros based on AR95XX-AR94XX: ATH9KFixUp with proper boot argument options seen in the original github [repo](https://github.com/chunnann/ATH9KFixup) or rehabman's [fork](https://github.com/RehabMan/ATH9KFixup) (ignore the fact that you need to install it under /S/L/E).
 4) Extracte every zip
 	* Note: a kexts is a macOS driver, and it's in a form of a `a_folder_name.kext`, on windows it will show as a folder, on macOS it will show as a file.
 5) now copy FakeSMC.kext - Lilu.kext - WhateverGreen.kext - USBInjectAll.kext - AppleALC.kext - [your_ethernet_driver].kext and put it in CLOVER > EFI > CLOVER > kexts > Other. [skip the sensor kexts, they may cause kernel panics, aka KP]
@@ -161,6 +184,17 @@ If you have an Nvidia GPU:
 - Disable anything like: Hybrid Graphics, Dual Graphics, DVMT size ... that are related to Intel GPU
 If you have Intel GPU:
 - make sure your DVMT pre-alloc (not to be confused with DVMT size), is set to 64MB (or higher, 64 is enough), DMVT size/apertures/whatever, to the max.
+
+For laptops:
+- make sure you have Secure Boot Disabled
+- TMP/Security Chips/Security modules Disabled (if possible, it may be enabled later on)
+- DVMT-prealloc to 64MB (if possible, not to be confused with DVMT size/aperture/whatever, however it may be seen as Graphics Memory)
+- move from RAID/IDE to AHCI (if applicable)
+- Disable the external GPU (if possible)
+- Enable USB Legacy support (on some cases)
+- Disable fast boot
+- Disable LAN/WLAN/WWAN boot/wake
+- Disable USB wake
 
 ### Now you're ready to plug-n-play.
 
@@ -186,5 +220,7 @@ To start the installation:
 After that, it will reboot for the second stage of the install, boot clover, it should now autoselect Boot `Install macOS from <your hdd name>`, if not, then select it on your own and boot it up, let it finish.
 
 Boom now you have macOS installed. Go to the bottom part of the reddit Vanilla guide [here](https://old.reddit.com/r/hackintosh/comments/68p1e2/ramblings_of_a_hackintosher_a_sorta_brief_vanilla/) to get more information and fixes and extra elements for your config.
+
+If you're a ***laptop*** user, you can go to rehabman's guide linked in the beginning.
 
 This guide will still be updated for additional hacks and information.
