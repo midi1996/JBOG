@@ -64,11 +64,11 @@ What you need to do
 
 1. Open MPW
 2. Check your partitions for the EFI partition
- * On some systems it may be named EFI, on others (like Sony) SYSTEM
- * It's a FAT32 partition
- * On regular windows install (clean from m$) it may have 100MB, on OEM installs, it may get to 450MB
- * It doesnt have a drive letter
- * Dont confuse it with Recovery partition of Windows (which is 450MB up to 800+)
+	* On some systems it may be named EFI, on others (like Sony) SYSTEM
+	* It's a FAT32 partition
+	* On regular windows install (clean from m$) it may have 100MB, on OEM installs, it may get to 450MB
+	* It doesnt have a drive letter
+	* Dont confuse it with Recovery partition of Windows (which is 450MB up to 800+)
 3. if it's >=200MB, just go ahead, repartition your disk and install macOS, it shouldnt bother you ***BUT*** if it's <200MB, you'll see that you have *EFI* then *MSR* (M$ reserved partition) and then *YOUR SYSTEM DRIVE* (note that the recovery partition can be at the very beginning or at the end of the list, if you have it anyways), then you will have to:
  1. Resize your system partition from the left by 200MB (that's enough, if you feel it isn't, add as much as you can to make the EFI drive >250MB, 400MB in a EFI partition is too much tbh)
  2. Select the MSR partition, select Copy Partition, then choose the blank space, the software will ask then where to specifically copy it in that blank space (since MSR cannot be resized), move it to the far right, to be sticked to the System partition.
