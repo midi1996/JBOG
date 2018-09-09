@@ -132,7 +132,8 @@ add
 
 20) Copy the resulting plist file and paste it in CLOVER (partition)> EFI > CLOVER and replace the one already there.
 
-### Fixing your clover install now:
+# The "awesome" $(kexts) part of the guide that everyone wants to get
+
 1) delete `doc` and `OEM` and `drivers64` (for UEFI users), or `drivers64UEFI` (for legacy users).
 2) for UEFI users:
 	- Open `drivers64UEFI`, *deled* everything inside
