@@ -148,7 +148,7 @@ add
 		- WhateverGreen
 		- USBInjectAll
 		- AppleALC
-		- [optional, for PS2 devices] VoodooPS2 (2018, doesn anyone still uses PS2 on their desktops, pff)
+		- [optional, for PS2 devices] VoodooPS2 (2018, does anyone still uses PS2 on their desktops, pff; laptop users, get this pronto, no questions asked.)
 		- For your LAN card:
 			- AppleIntele1000 for some old cards
 			- IntelMausiEthernet for most Intel NICs
@@ -157,14 +157,14 @@ add
 			- RealtekRTL8100 for 10/100 Realtek Cards
 			- RealtekRTL8111 for Gigabit Realtek Cards
 				- Note: if you're not sure, get all of them, but it may create issues later on.
-		- *[Exceptionally]* For your compatible Wifi Card:
+		- *[Exceptionally for WiFi-only users]* For your compatible Wifi Card:
 			- for Broadcom based chips (DW1550-DW1560-DW1830...): AirPortBcmFixUp
 			- for Atheros based chips (AR5B95/195/97/197, based on AR9280/AR9285 SoC): 
 				- go to https://github.com/RehabMan/HP-ProBook-4x30s-DSDT-Patch/archive/master.zip
 				- extract the zip
 				- explore to `kexts`
 				- get `ProbookAtheros.kext`
-			- for QComAtheros: NOPE - Change it
+			- for QComAtheros: NOPE - Change it (check AR95/4XX bellow)
 			- for Intel: NOPE - Change it
 			- for Atheros based on AR95XX-AR94XX: ATH9KFixUp with proper boot argument options seen in the original github [repo](https://github.com/chunnann/ATH9KFixup) or rehabman's [fork](https://github.com/RehabMan/ATH9KFixup) (ignore the fact that you need to install it under /S/L/E).
 4) Extracte every zip
