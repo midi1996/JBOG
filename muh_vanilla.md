@@ -6,7 +6,7 @@ This is a sort-of-guide, that will show you how to make a macOS installer on Win
 
 This guide mainly (mostly) **FOR DESKTOP USERS**. Laptop users get to [this guide from rehabman](https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/).
 
-***OR*** continue reading this guide lol.
+***OR*** continue reading this guide lol. *[Added inital laptop support, more like install laptop support]*
 
 ***
 ### Disclamer:
