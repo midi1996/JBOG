@@ -31,6 +31,7 @@ Neither I nor the people here helping or attempting to help take any responsibli
 
 1) cVad's BootDiskUtility from his [official website](http://cvad-mac.narod.ru/index/bootdiskutility_exe/0-5) or [InsanelyMac thread](https://www.insanelymac.com/forum/topic/283190-bootdisk-utility/)
 2) Minitool partition wizard [Google]
+3) a text editor: Notepad++, Sublime Text, Geany, any IDE would work, just stay way from windows' native notepad app.
 
 # For the steps:
 Depending on your hardware, you will need to make some modification or choices follwing this guide.
@@ -60,6 +61,19 @@ Depending on your hardware, you will need to make some modification or choices f
 ### For lappies:
 
 Got to [Rehabman config.plist repository](https://github.com/RehabMan/OS-X-Clover-Laptop-Config) and get a fitting config from the list to your hardware configuration.
+
+Then open the file with a text editor (check above), and add these with the boot arguments: `-v debug=0x100`. 
+Boot arguments entry:
+```xml
+	...
+<key>Boot</key>
+<dict>
+	...
+	<key>Arguments</key>
+	<string>[You'll find some arguments here already, add the above to them]</string>
+	...
+```
+Save the file, go to 20) after the Deskies config.
 
 ### For deskies:
 
