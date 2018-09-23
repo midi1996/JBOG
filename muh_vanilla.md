@@ -49,7 +49,8 @@ Depending on your hardware, you will need to make some modification or choices f
 11) press Update
 12) Select from OS X Recovery list the macOS version you want to install
 13) press DL
-14) when done and extracted (the software will do that, not you), expand your usb list in BDU, select teh second partition (the first is named clover, no touch!)
+14) when done and extracted (the software will do that, not you), expand your usb list in BDU
+15) select the second partition (the first is named clover, no touch!)
 15) press Restore
 16) choose 4.hfs from the list (it should be inside the extracted BDU folder)
 17) wait
@@ -220,8 +221,8 @@ To start the installation:
 4) select your USB device (make sure it says UEFI or PX before it, some motherboards with only legacy may not find UEFI, it's fine, tho I'm not supporting Legacy booting atm).
 5) select Boot macOS Recovery from ...
 6) wait for the wall of text to make you feel like a hackerman
-	Note: if it gets stuck with a Stop sign, change your USB drive's port, use a USB2.0 drive, or use a USB2.0 extension cord.
-	Note2: if you get a black screen at then end of the installer on Intel HD GPUs, reboot to Clover, Press `O` (letter), go to Graphics Injection, change FakeID to 0x12345678, go back and boot. You will have to do this on every reboot until you get to the desktop. The Graphics will be slow and sliggish, fix it asap. Use google then.
+	- Note: if it gets stuck with a Stop sign, change your USB drive's port, use a USB2.0 drive, or use a USB2.0 extension cord.
+	- Note2: if you get a black screen at then end of the installer on Intel HD GPUs, reboot to Clover, Press `O` (letter), go to Graphics Injection, change FakeID to 0x12345678, go back and boot. You will have to do this on every reboot until you get to the desktop. The Graphics will be slow and sliggish, fix it asap. Use google then.
 7) when you get to the Installer screen (it may take several minutes for it to load), open Utilities > Network Utility. Check if there is a connection, if not, check your LAN cable, and your LAN drivers from above.
 8) Go back, select Disk Utility, select the drive to format, nuke it as MacOS Extended Journaled, name it something and go back.
 	- Note: if you want to multiboot, go [here](Multiboot.md)
