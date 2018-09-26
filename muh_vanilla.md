@@ -157,7 +157,7 @@ add
 	- Put it in drivers64UEFI
 3) Go to kexts > Other
 	- Go to [Goose's Kext Repo](https://1drv.ms/f/s!AiP7m5LaOED-mo9XA4Ml-69cwAsikQ)
-	- Download these:
+	- Download these: [Note: Expore each folder and you'll a Zip file, get that Zip file, not the whole folder]
 		- FakeSMC
 		- Lilu
 		- WhateverGreen
