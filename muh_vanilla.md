@@ -20,8 +20,9 @@ Neither I nor the people here helping or attempting to help take any responsibli
 1) have a 4GB minimum USB drive 
 	* Note: if you have a rooted android phone, look for DriveDroid, and make sure you have a shared internal storage (no separate /data partition) usually all phones made after 2012 should be like that, so if yours is fairly new it will handle it just fine.
 	* Note2: use a USB2.0 drive, HDDs may not be a good choice, also if you dont have any USB2.0, plug the USB in a USB2.0 port if available, or use a USB extension cord that doesnt support USB3.0, this way the USB3.0 drive will run in USB2.0 mode.
-2)[CRUCIAL] a LAN connection with Fast internet (no wifi, no wifi dongles, Ethernet USB adapter *may* work depending on macOS support) and you must know your LAN card's model (and your internet speed)
+2) [CRUCIAL] a LAN connection with Fast internet (no wifi, no wifi dongles, Ethernet USB adapter *may* work depending on macOS support) and you must know your LAN card's model (and your internet speed)
 	- For lappies: you must either have a physical lan port, or a compatible macOS ethernet dongle/adapter, or in case your have a compatible wifi card, it's also good but not recommended (unless it's the only way to go)
+	- Ok for people who can't use ethernet but have an android phone, you can connect your android phone to WiFi and then tether it using USB, sadly, iOS users can't use that :/
 3) a fast internet connection (20Mbps downlink may take about an hour for the install procedure, the faster the better).
 4) a Windows environment (can be VM, installed on a real machine, or even WinPE): Windows 7 SP1 or later.
 5) some googling skills, which a lot of you lack.
@@ -166,6 +167,7 @@ add
 		- [optional, for PS2 devices] VoodooPS2 (2018, does anyone still uses PS2 on their desktops, pff; laptop users, get this pronto, no questions asked.)
 		- For your LAN card:
 			- AppleIntele1000 for some old cards
+			- [HorNDIS](../Extra/HorNDIS.kext.zip) [OPTIONAL IF YOU NEED NETWORK USING ANDROID]
 			- IntelMausiEthernet for most Intel NICs
 			- AtherosE2200Ethernet for Atheros/QualcommAtheros/Killer(some) NICs
 			- BCM5722D for Broadcom BCM5722 NetXtreme and NetLink family
