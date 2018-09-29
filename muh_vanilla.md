@@ -20,7 +20,7 @@ Neither I nor the people here helping or attempting to help take any responsibli
 1) have a 4GB minimum USB drive 
 	* Note: if you have a rooted android phone, look for DriveDroid, and make sure you have a shared internal storage (no separate /data partition) usually all phones made after 2012 should be like that, so if yours is fairly new it will handle it just fine.
 	* Note2: use a USB2.0 drive, HDDs may not be a good choice, also if you dont have any USB2.0, plug the USB in a USB2.0 port if available, or use a USB extension cord that doesnt support USB3.0, this way the USB3.0 drive will run in USB2.0 mode.
-2) a LAN connection (no wifi, no wifi dongles, Ethernet USB adapter *may* work depending on macOS support) and you must know your LAN card's model [CRUTIAL]
+2)[CRUCIAL] a LAN connection with Fast internet (no wifi, no wifi dongles, Ethernet USB adapter *may* work depending on macOS support) and you must know your LAN card's model (and your internet speed)
 	- For lappies: you must either have a physical lan port, or a compatible macOS ethernet dongle/adapter, or in case your have a compatible wifi card, it's also good but not recommended (unless it's the only way to go)
 3) a fast internet connection (20Mbps downlink may take about an hour for the install procedure, the faster the better).
 4) a Windows environment (can be VM, installed on a real machine, or even WinPE): Windows 7 SP1 or later.
