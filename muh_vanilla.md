@@ -167,7 +167,7 @@ add
 		- [optional, for PS2 devices] VoodooPS2 (2018, does anyone still uses PS2 on their desktops, pff; laptop users, get this pronto, no questions asked.)
 		- For your LAN card:
 			- AppleIntele1000 for some old cards
-			- [HorNDIS](../master/Extra/HoRNDIS.kext.zip) [OPTIONAL IF YOU NEED NETWORK USING ANDROID]
+			- [HorNDIS](../master/Extra/HoRNDIS.kext.zip?raw=true) [OPTIONAL IF YOU NEED NETWORK USING ANDROID]
 			- IntelMausiEthernet for most Intel NICs
 			- AtherosE2200Ethernet for Atheros/QualcommAtheros/Killer(some) NICs
 			- BCM5722D for Broadcom BCM5722 NetXtreme and NetLink family
