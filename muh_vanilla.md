@@ -8,6 +8,10 @@ This guide mainly (mostly) **FOR DESKTOP USERS**. Laptop users get to [this guid
 
 ***OR*** continue reading this guide lol. *[Added inital laptop support, more like install laptop support]*
 
+### Multiboot.exe
+
+If you want to multiboot, go have a read [here](Multiboot.md) then come back.
+
 ***
 ### Disclamer:
 Neither I nor the people here helping or attempting to help take any responsiblity of your actions. You're following this guide on your own accord and anything that occures as damages are under your resposibility.
@@ -75,7 +79,7 @@ Boot arguments entry:
 	<string>[You'll find some arguments here already, add the above to them]</string>
 	...
 ```
-Save the file, go to 20) after the Deskies config.
+Save the file, rename and copy the resulting plist file and paste it in CLOVER (partition)> EFI > CLOVER and replace the one already there.
 
 ### For deskies:
 
@@ -143,14 +147,11 @@ add
 	<true/>
 ```
 19) Save
-
-### For both
-
-20) Copy the resulting plist file and paste it in CLOVER (partition)> EFI > CLOVER and replace the one already there.
+20) Rename and copy the resulting plist file and paste it in CLOVER (partition)> EFI > CLOVER and replace the one already there.
 
 # The "awesome" $(kexts) part of the guide that everyone wants to get
 
-1) delete `doc` and `OEM` and `drivers64` (for UEFI users), or `drivers64UEFI` (for legacy users).
+1) delete `doc` and `OEM` and `drivers64` (for UEFI users), or `drivers64UEFI` (for legacy users) and `drivers32` and `drivers32UEFI`.
 2) for UEFI users:
 	- Open `drivers64UEFI`, *deled* everything inside
 	- go to `drivers-off > drivers64UEFI`, copy ApfsDriverLoader and AptioMemoryFix to `drivers64UEFI` that we emptied earlier.
@@ -164,10 +165,10 @@ add
 		- WhateverGreen
 		- USBInjectAll
 		- AppleALC
-		- [optional, for PS2 devices] VoodooPS2 (2018, does anyone still uses PS2 on their desktops, pff; laptop users, get this pronto, no questions asked.)
+		- [optional, for desktop, CRUCIAL, for laptops] VoodooPS2 (2018, does anyone still uses PS2 on their desktops, pff; laptop users, get this pronto, no questions asked.)
 		- For your LAN card:
 			- AppleIntele1000 for some old cards
-			- [HorNDIS](../master/Extra/HoRNDIS.kext.zip?raw=true) [OPTIONAL IF YOU NEED NETWORK USING ANDROID]
+			- [HoRNDIS](../master/Extra/HoRNDIS.kext.zip?raw=true) [OPTIONAL IF YOU NEED NETWORK USING ANDROID]
 			- IntelMausiEthernet for most Intel NICs
 			- AtherosE2200Ethernet for Atheros/QualcommAtheros/Killer(some) NICs
 			- BCM5722D for Broadcom BCM5722 NetXtreme and NetLink family
