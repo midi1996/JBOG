@@ -243,3 +243,15 @@ Boom now you have macOS installed. Go to the bottom part of the reddit Vanilla g
 If you're a ***laptop*** user, you can go to rehabman's guide linked in the beginning.
 
 This guide will still be updated for additional hacks and information.
+
+Credits:
+All credits to where credit is due.
+- Rehabman for the laptop configs, kexts and guide for laptops.
+- Clover team for clover
+- cvad for BDU
+- CorpNewt for the help and the software he made and the vanilla guide in reddit
+- Goldfish64 for the kext repo and autobuild
+- Dids for the CloverBot repo
+- Acidanthera team (???) for lots of drivers and fixes they made for the community.
+
+If I forgot crediting you or you want your software here to be removed, please contact me with the software in question.
