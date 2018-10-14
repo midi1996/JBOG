@@ -1,3 +1,8 @@
+# Updates! 
+
+Go to here: https://hackintosh.gitbook.io/macos-internet-install/
+okay?
+
 # Vanilla macOS installer from Windows
 
 This is a sort-of-guide, that will show you how to make a macOS installer on Windows, and keeping it vanilla. This is complementary with /u/corpnewt Vanilla guide, minus some stuff that I dont like like Clover Configurator (ewewewewewewew).
