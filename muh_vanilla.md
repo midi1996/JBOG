@@ -164,6 +164,11 @@ add
 	- go to `drivers-off > drivers64UEFI`, copy ApfsDriverLoader and AptioMemoryFix to `drivers64UEFI` that we emptied earlier.
 	- Download [HFSPlus.efi](https://github.com/JrCs/CloverGrowerPro/blob/master/Files/HFSPlus/X64/HFSPlus.efi)
 	- Put it in drivers64UEFI
+2) for Legacy users:
+	- Open drivers64, *keep* everything inside
+	- go to `drivers-off > drivers64UEFI`, copy ApfsDriverLoader to `drivers64`
+	- Download [HFSPlus.efi](https://github.com/JrCs/CloverGrowerPro/blob/master/Files/HFSPlus/X64/HFSPlus.efi)
+	- Put it in drivers64
 3) Go to kexts > Other
 	* Go to [Goose's Kext Repo](https://1drv.ms/f/s!AiP7m5LaOED-m-J8-MLJGnOgAqnjGw)
 	* Download these: _\[Note: Explore each folder and you'll find a Zip file, get that Zip file, not the whole folder\]_
