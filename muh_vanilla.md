@@ -165,33 +165,35 @@ add
 	- Download [HFSPlus.efi](https://github.com/JrCs/CloverGrowerPro/blob/master/Files/HFSPlus/X64/HFSPlus.efi)
 	- Put it in drivers64UEFI
 3) Go to kexts > Other
-	- Go to [Goose's Kext Repo](https://1drv.ms/f/s!AiP7m5LaOED-mo9XA4Ml-69cwAsikQ)
-	- Download these: [Note: Expore each folder and you'll a Zip file, get that Zip file, not the whole folder]
-		- FakeSMC
-		- Lilu
-		- WhateverGreen
-		- USBInjectAll
-		- AppleALC
-		- [optional, for desktop, CRUCIAL, for laptops] VoodooPS2 (2018, does anyone still uses PS2 on their desktops, pff; laptop users, get this pronto, no questions asked.)
-		- For your LAN card:
-			- AppleIntele1000 for some old cards
-			- [HoRNDIS](../master/Extra/HoRNDIS.kext.zip?raw=true) [OPTIONAL IF YOU NEED NETWORK USING ANDROID]
-			- IntelMausiEthernet for most Intel NICs
-			- AtherosE2200Ethernet for Atheros/QualcommAtheros/Killer(some) NICs
-			- BCM5722D for Broadcom BCM5722 NetXtreme and NetLink family
-			- RealtekRTL8100 for 10/100 Realtek Cards
-			- RealtekRTL8111 for Gigabit Realtek Cards
-				- Note: if you're not sure, get all of them, but it may create issues later on.
-		- *[Exceptionally for WiFi-only users]* For your compatible Wifi Card:
-			- for Broadcom based chips (DW1550-DW1560-DW1830...): AirPortBcmFixUp
-			- for Atheros based chips (AR5B95/195/97/197, based on AR9280/AR9285 SoC): 
-				- go to https://github.com/RehabMan/HP-ProBook-4x30s-DSDT-Patch/archive/master.zip
-				- extract the zip
-				- explore to `kexts`
-				- get `ProbookAtheros.kext`
-			- for QComAtheros: NOPE - Change it (check AR95/4XX bellow)
-			- for Intel: NOPE - Change it
-			- for Atheros based on AR95XX-AR94XX: ATH9KFixUp with proper boot argument options seen in the original github [repo](https://github.com/chunnann/ATH9KFixup) or rehabman's [fork](https://github.com/RehabMan/ATH9KFixup) (ignore the fact that you need to install it under /S/L/E).
+	* Go to [Goose's Kext Repo](https://1drv.ms/f/s!AiP7m5LaOED-m-J8-MLJGnOgAqnjGw)
+	* Download these: _\[Note: Explore each folder and you'll find a Zip file, get that Zip file, not the whole folder\]_
+     	* _**FakeSMC**_ OR _**VirtualSMC**_ \(they both emulate an SMC system, though VSMC has quality code than FSMC, do not use both\)
+     	* _**Lilu**_ \(an arbitrary kext patcher\)
+     	* WhateverGreen \(has different fixes and patches for various GPU-related issues, depends on Lilu\)
+     	* _**USBInjectAll**_ \(Injects USB information, configuration is needed\)
+       	* Pair it with **FakePCIID+FakePCIID\_XHCIMux** if you're on a 5th gen laptop or 4th motherboard and earlier. 6th gen laptops or motherboards dont need it.
+     	* _**AppleALC**_ \(AppleHDA patcher for audio injection, depends on Lilu\)
+     	* _\[optional, for desktop, **CRUCIAL, for laptops**\]_ _**VoodooPS2**_ \(PS2 drivers, needed for laptops\)
+     	* For your LAN card:
+       		* **AppleIntele1000** for some old cards
+       		* [HoRNDIS](https://github.com/midi1996/JBOG/blob/master/Extra/HoRNDIS.kext.zip?raw=true) _\[OPTIONAL IF YOU NEED NETWORK USING ANDROID\]_
+       		* **IntelMausiEthernet** for most Intel NICs
+       		* **AtherosE2200Ethernet** for some Atheros/QualcommAtheros/Killer\(some\) NICs
+       		* **BCM5722D** for Broadcom BCM5722 NetXtreme and NetLink family
+       		* **RealtekRTL8100** for 10/100 Realtek Cards \(Realtek FE\)
+       		* **RealtekRTL8111** for Gigabit Realtek Cards \(Realtek GbE\)
+         		* _Note: if you're not sure, LOOK FOR YOUR LAN CHIPSET AND CHECK THIS AGAIN._
+     	* _\[Exceptionally for WiFi-only users\]_ For your compatible WiFi Card:
+       		* USB Wifi Users: **NO \[wont work while the install, look for the driver after the install\]**
+       		* for Broadcom based chips _\(DW1550-DW1560-DW1830...\)_: AirPortBcmFixUp
+       		* for Atheros based chips _\(AR5B95/195/97/197, based on AR9280/AR9285 SoC\)_:
+         		* go to [https://github.com/RehabMan/HP-ProBook-4x30s-DSDT-Patch/archive/master.zip](https://github.com/RehabMan/HP-ProBook-4x30s-DSDT-Patch/archive/master.zip)
+         		* extract the zip
+         		* explore to `kexts`
+         		* get `ProbookAtheros.kext`
+       		* for QComAtheros: _NOPE_ - Change it \(check AR95/4XX bellow\)
+       		* for Intel: _NOPE_ - Change it
+       		* for Atheros based on _AR95XX-AR94XX_: ATH9KFixUp with proper boot argument options seen in the original github [repo](https://github.com/chunnann/ATH9KFixup) or rehabman's [fork](https://github.com/RehabMan/ATH9KFixup) \(ignore the fact that you need to install it under /S/L/E\).
 4) Extracte every zip
 	* Note: a kexts is a macOS driver, and it's in a form of a `a_folder_name.kext`, on windows it will show as a folder, on macOS it will show as a file.
 5) now copy FakeSMC.kext - Lilu.kext - WhateverGreen.kext - USBInjectAll.kext - AppleALC.kext - [your_ethernet_driver].kext and put it in CLOVER > EFI > CLOVER > kexts > Other. [skip the sensor kexts, they may cause kernel panics, aka KP]
