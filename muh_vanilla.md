@@ -1,6 +1,6 @@
 # Updates! 
 
-Go to here: https://hackintosh.gitbook.io/macos-internet-install/
+Go to here: https://internet-install.gitbook.io/macos-internet-install/
 okay?
 
 'Tis a new guide. this is old and busted (still working tho, but the one above is better).
