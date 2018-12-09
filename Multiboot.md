@@ -2,7 +2,7 @@
 
 I moved this guide to GitBook like muh_vanilla.md
 
-https://hackintosh.gitbook.io/hackintosh-multiboot/
+https://hackintosh-multiboot.gitbook.io/
 
 Enjoy
 
